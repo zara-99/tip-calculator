@@ -2,11 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", sans-serif;
+  /* font-family: "Segoe UI", sans-serif; */
+  font-family: DynaPuff;
+  font-weight: 100;
 }
 
 body {
-  background: linear-gradient(135deg, #938b3e, #cdd0ea);
+  background: linear-gradient(135deg, #938b3e, #eacdd0);
   color: #322f15;
   display: flex;
   justify-content: center;
@@ -22,11 +24,14 @@ body {
   width: 100%;
   max-width: 400px;
 }
+h1 {
+  font-weight: bold;
+}
 
 label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 input[type="number"] {
@@ -105,4 +110,8 @@ select {
 
 .hidden {
   display: none;
+}
+
+.material-icons {
+  vertical-align: middle;
 }

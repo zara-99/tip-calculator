@@ -6,15 +6,27 @@
     <title>Tip Calculator</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <h1>Tip Calculator</h1>
+      <h1>TIP CALCULATOR🧮</h1>
 
-      <label for="bill">Bill Amount:</label>
+      <label for="bill">Bill Amount:💵</label>
       <input type="number" id="bill" placeholder="Enter bill amount" min="1" />
 
-      <label for="tip">Tip Percentage:</label>
+      <label for="tip">Tip Percentage:💁🏻</label>
       <select id="tip">
         <option value="" selected>Choose tip %</option>
         <option value="10">10%</option>
@@ -24,7 +36,7 @@
         <option value="25">25%</option>
       </select>
 
-      <label for="people">Number of People:</label>
+      <label for="people">Number of People:🧑‍🤝‍🧑</label>
       <input
         type="number"
         id="numPeople"
@@ -32,7 +44,10 @@
         min="1"
       />
 
-      <button id="Calculate">Calculate</button>
+      <button id="Calculate">
+        <span class="material-icons">calculate</span>
+        Calculate
+      </button>
 
       <div class="results">
         <!-- <div class="result-row">
