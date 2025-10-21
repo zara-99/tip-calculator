@@ -5,11 +5,20 @@ const tipInput = document.getElementById("tip");
 const numPeopleInput = document.getElementById("numPeople");
 const calcBtn = document.getElementById("Calculate");
 const resultsContainer = document.querySelector(".results");
+const errMsg = document.getElementById("error-msg");
 
 calcBtn.addEventListener("click", function () {
   const billAmount = parseFloat(billInput.value);
   const tipPercentage = parseFloat(tipInput.value);
   const numPeople = parseInt(numPeopleInput.value);
+
+  if (isNaN(billAmount) || isNaN(tipPercentage) || billAmount === 0) {
+    errMsg.classList.remove("hidden");
+    billInput.value = "";
+    tipInput.value = "";
+    numPeopleInput.value = "";
+    return;
+  }
 
   const tipAmount = billAmount * (tipPercentage / 100);
   const totalAmount = billAmount + tipAmount;
@@ -26,7 +35,11 @@ calcBtn.addEventListener("click", function () {
         </div>
         <div class="result-row">
           <p id="per-person">Per Person:</p>
-          <div class="result-square" id="person-square">${perPerson}</div>
+          <div class="result-square" id="person-square">${
+            isFinite(perPerson) || !isNaN(perPerson)
+              ? perPerson.toFixed(2)
+              : "--"
+          }</div>
   </div>`;
 
   console.log(
@@ -39,4 +52,7 @@ calcBtn.addEventListener("click", function () {
   );
 
   resultsContainer.insertAdjacentHTML("afterbegin", html);
+  billInput.value = "";
+  tipInput.value = "";
+  numPeopleInput.value = "";
 });
