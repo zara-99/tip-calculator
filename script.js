@@ -13,10 +13,11 @@ calcBtn.addEventListener("click", function () {
   const numPeople = parseInt(numPeopleInput.value);
 
   if (isNaN(billAmount) || isNaN(tipPercentage) || billAmount === 0) {
-    errMsg.classList.remove("hidden");
     billInput.value = "";
     tipInput.value = "";
     numPeopleInput.value = "";
+    resultsContainer.innerHTML = "";
+    errMsg.classList.remove("hidden");
     return;
   }
 
@@ -52,6 +53,7 @@ calcBtn.addEventListener("click", function () {
   );
 
   resultsContainer.innerHTML = "";
+  errMsg.classList.add("hidden");
   resultsContainer.insertAdjacentHTML("afterbegin", html);
   billInput.value = "";
   tipInput.value = "";
