@@ -10,22 +10,27 @@ html {
   font-size: 16px;
 }
 
+:root {
+  --bg-color: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  --text-color: black;
+}
+
 body {
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-  color: #000000;
+  background: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 .light-theme {
-  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-  color: #000000;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 .dark-theme {
-  background: linear-gradient(to top, #03132f, #396472);
-  color: white;
+  --bg-color: linear-gradient(to top, #03132f, #396472);
+  --text-color: white;
 }
 
 .container {
@@ -93,7 +98,7 @@ button:hover {
 
   font-weight: bold;
   text-align: center;
-  color: #000000;
+  color: var(--text-color);
 }
 
 select {
