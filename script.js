@@ -6,8 +6,8 @@ const numPeopleInput = document.getElementById("numPeople");
 const calcBtn = document.getElementById("Calculate");
 const resultsContainer = document.querySelector(".results");
 const errMsg = document.getElementById("error-msg");
-const themeBtnDark = document.querySelector(".themeBtn.dark");
-const themeBtnLight = document.querySelector(".themeBtn.light");
+const themeBtn = document.querySelector(".themeBtn");
+const themeIcon = document.querySelector(".theme-icon");
 const container = document.querySelector(".container");
 const body = document.dody;
 
@@ -64,19 +64,14 @@ calcBtn.addEventListener("click", function () {
   numPeopleInput.value = "";
 });
 
-[themeBtnDark, themeBtnLight].forEach((btn, i, arr) => {
-  btn.addEventListener("click", function () {
-    // if (i === 0) {
-    //   arr[0].classList.add("hidden");
-    //   arr[1].classList.remove("hidden");
-    // } else {
-    //   arr[1].classList.add("hidden");
-    //   arr[0].classList.remove("hidden");
-    // }
-    themeBtnDark.classList.toggle("hidden");
-    themeBtnLight.classList.toggle("hidden");
+themeBtn.addEventListener("click", function () {
+  document.body.classList.toggle("dark-theme");
+  document.body.classList.toggle("light-theme");
 
-    document.body.classList.toggle("dark-theme");
-    document.body.classList.toggle("light-theme");
-  });
+  container.classList.toggle("dark-theme");
+  container.classList.toggle("light-theme");
+
+  if (document.body.classList.contains("dark-theme"))
+    themeIcon.textContent = "light_mode";
+  else themeIcon.textContent = "brightness_2";
 });
