@@ -47,15 +47,6 @@ calcBtn.addEventListener("click", function () {
           }</div>
   </div>`;
 
-  //   console.log(
-  //     billAmount,
-  //     tipPercentage,
-  //     numPeople,
-  //     tipAmount,
-  //     totalAmount,
-  //     perPerson
-  //   );
-
   resultsContainer.innerHTML = "";
   errMsg.classList.add("hidden");
   resultsContainer.insertAdjacentHTML("afterbegin", html);
