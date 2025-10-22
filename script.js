@@ -51,6 +51,7 @@ calcBtn.addEventListener("click", function () {
     perPerson
   );
 
+  resultsContainer.innerHTML = "";
   resultsContainer.insertAdjacentHTML("afterbegin", html);
   billInput.value = "";
   tipInput.value = "";
