@@ -18,6 +18,15 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+.light-theme {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  color: #000000;
+}
+
+.dark-theme {
+  background: linear-gradient(to right, #061f4a, #0a2531);
+  /* color: white; */
+}
 
 .container {
   background-color: #f1f2f9;
@@ -47,6 +56,18 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: clamp(1rem, 1vw, 1.3rem);
+}
+
+.themeBtn {
+  background-color: #f1f2f9;
+  color: #2823a0;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.themeBtn:hover {
+  background-color: white;
 }
 
 button {

@@ -6,6 +6,10 @@ const numPeopleInput = document.getElementById("numPeople");
 const calcBtn = document.getElementById("Calculate");
 const resultsContainer = document.querySelector(".results");
 const errMsg = document.getElementById("error-msg");
+const themeBtnDark = document.querySelector(".themeBtn.dark");
+const themeBtnLight = document.querySelector(".themeBtn.light");
+const container = document.querySelector(".container");
+const body = document.dody;
 
 calcBtn.addEventListener("click", function () {
   const billAmount = parseFloat(billInput.value);
@@ -43,14 +47,14 @@ calcBtn.addEventListener("click", function () {
           }</div>
   </div>`;
 
-  console.log(
-    billAmount,
-    tipPercentage,
-    numPeople,
-    tipAmount,
-    totalAmount,
-    perPerson
-  );
+  //   console.log(
+  //     billAmount,
+  //     tipPercentage,
+  //     numPeople,
+  //     tipAmount,
+  //     totalAmount,
+  //     perPerson
+  //   );
 
   resultsContainer.innerHTML = "";
   errMsg.classList.add("hidden");
@@ -58,4 +62,21 @@ calcBtn.addEventListener("click", function () {
   billInput.value = "";
   tipInput.value = "";
   numPeopleInput.value = "";
+});
+
+[themeBtnDark, themeBtnLight].forEach((btn, i, arr) => {
+  btn.addEventListener("click", function () {
+    // if (i === 0) {
+    //   arr[0].classList.add("hidden");
+    //   arr[1].classList.remove("hidden");
+    // } else {
+    //   arr[1].classList.add("hidden");
+    //   arr[0].classList.remove("hidden");
+    // }
+    themeBtnDark.classList.toggle("hidden");
+    themeBtnLight.classList.toggle("hidden");
+
+    document.body.classList.toggle("dark-theme");
+    document.body.classList.toggle("light-theme");
+  });
 });
