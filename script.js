@@ -52,11 +52,15 @@ calcBtn.addEventListener("click", function () {
   const html = `
   <div class="result-row">
           <p id="tip-amount">Tip Amount:</p>
-          <div class="result-square" id="tip-square">${tipAmount}</div>
+          <div class="result-square" id="tip-square">${tipAmount.toFixed(
+            2
+          )}</div>
         </div>
         <div class="result-row">
           <p id="total-amount">Total Amount:</p>
-          <div class="result-square" id="total-square">${totalAmount}</div>
+          <div class="result-square" id="total-square">${totalAmount.toFixed(
+            2
+          )}</div>
         </div>
         <div class="result-row">
           <p id="per-person">Per Person:</p>
