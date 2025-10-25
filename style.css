@@ -11,7 +11,12 @@ html {
 }
 
 :root {
-  --bg-color: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  --bg-color: linear-gradient(to right, #a1c4fd, #5ea6c7);
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  --bg-color: linear-gradient(to top, #03132f, #396472);
   --text-color: black;
 }
 
@@ -22,8 +27,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  transition: background-color 1s ease, color 1s ease;
 }
-.light-theme {
+/* .light-theme {
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -31,7 +37,7 @@ body {
 .dark-theme {
   --bg-color: linear-gradient(to top, #03132f, #396472);
   --text-color: white;
-}
+} */
 
 .container {
   background-color: #f1f2f9;

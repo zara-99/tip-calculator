@@ -9,7 +9,27 @@ const errMsg = document.getElementById("error-msg");
 const themeBtn = document.querySelector(".themeBtn");
 const themeIcon = document.querySelector(".theme-icon");
 const container = document.querySelector(".container");
-const body = document.dody;
+const body = document.body;
+
+//apply saved theme on laod
+window.addEventListener("load", function () {
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  themeIcon.textContent = savedTheme === "dark" ? "light_mode" : "brightness_2";
+});
+
+// window.addEventListener("load", () => {
+//   const savedTheme = localStorage.getItem("theme");
+//   if (savedTheme === "dark") {
+//     container.classList.add("dark-theme");
+//     container.classList.remove("light-theme");
+//     themeIcon.textContent = "light_mode";
+//   } else {
+//     container.classList.add("light-theme");
+//     container.classList.remove("dark-theme");
+//     themeIcon.textContent = "brightness_2";
+//   }
+// });
 
 calcBtn.addEventListener("click", function () {
   const billAmount = parseFloat(billInput.value);
@@ -56,13 +76,14 @@ calcBtn.addEventListener("click", function () {
 });
 
 themeBtn.addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
-  document.body.classList.toggle("light-theme");
-
-  container.classList.toggle("dark-theme");
-  container.classList.toggle("light-theme");
-
-  if (document.body.classList.contains("dark-theme"))
-    themeIcon.textContent = "light_mode";
-  else themeIcon.textContent = "brightness_2";
+  // getting the cuurent and new theme
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  console.log(currentTheme, newTheme);
+  // changing the data attribute to the new theme
+  document.documentElement.setAttribute("data-theme", newTheme);
+  //setting the local storage
+  localStorage.setItem("theme", newTheme);
+  // toggling the icon
+  themeIcon.textContent = newTheme === "dark" ? "light_mode" : "brightness_2";
 });
